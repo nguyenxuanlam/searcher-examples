@@ -41,7 +41,7 @@ pub mod proto {
     tonic::include_proto!("searcher");
     tonic::include_proto!("shared");
     tonic::include_proto!("auth");
-    // Re-export shared types to avoid conflicts
-    pub use packet::{SubscribePacketsRequest, SubscribePacketsResponse};
-
+    
+    // Fix the re-export by using the correct path
+    pub use crate::packet::{SubscribePacketsRequest, SubscribePacketsResponse};
 }
