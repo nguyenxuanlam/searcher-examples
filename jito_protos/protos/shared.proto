@@ -6,22 +6,22 @@ import "packet.proto";
 package shared;
 
 message Header {
-  google.protobuf.Timestamp ts = 1;
+    google.protobuf.Timestamp ts = 1;
 }
 
 message Heartbeat {
-  uint64 count = 1;
+    uint64 count = 1;
 }
 
 message Socket {
-  string ip = 1;
-  int64 port = 2;
+    string ip = 1;
+    int64 port = 2;
 }
+
 message Empty {}
 
-// Move common messages here
-message SubscribePacketsRequest {}
-
-message SubscribePacketsResponse {
-    repeated packet.Packet packets = 1;
-}
+// Remove these messages since they should be in packet.proto
+// message SubscribePacketsRequest {}
+// message SubscribePacketsResponse {
+//     repeated packet.Packet packets = 1;
+// }
