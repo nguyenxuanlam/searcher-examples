@@ -1,45 +1,69 @@
 pub mod convert;
 
-pub mod block {
+// Define the individual proto modules
+mod block {
     tonic::include_proto!("block");
 }
 
-pub mod block_engine {
+mod block_engine {
     tonic::include_proto!("block_engine");
 }
 
-pub mod bundle {
+mod bundle {
     tonic::include_proto!("bundle");
 }
 
-pub mod packet {
+mod packet {
     tonic::include_proto!("packet");
 }
 
-pub mod relayer {
+mod relayer {
     tonic::include_proto!("relayer");
 }
 
-pub mod searcher {
+mod searcher {
     tonic::include_proto!("searcher");
 }
 
-pub mod shared {
+mod shared {
     tonic::include_proto!("shared");
 }
 
-pub mod auth {
+mod auth {
     tonic::include_proto!("auth");
 }
 
+// Public proto module that re-exports everything
 pub mod proto {
-    // Re-export all the modules
-    pub use crate::auth::*;
-    pub use crate::block::*;
-    pub use crate::block_engine::*;
-    pub use crate::bundle::*;
-    pub use crate::packet::*;
-    pub use crate::relayer::*;
-    pub use crate::searcher::*;
-    pub use crate::shared::*;
+    pub mod packet {
+        pub use crate::packet::*;
+    }
+    
+    pub mod block {
+        pub use crate::block::*;
+    }
+    
+    pub mod block_engine {
+        pub use crate::block_engine::*;
+    }
+    
+    pub mod bundle {
+        pub use crate::bundle::*;
+    }
+    
+    pub mod relayer {
+        pub use crate::relayer::*;
+    }
+    
+    pub mod searcher {
+        pub use crate::searcher::*;
+    }
+    
+    pub mod shared {
+        pub use crate::shared::*;
+    }
+    
+    pub mod auth {
+        pub use crate::auth::*;
+    }
 }
