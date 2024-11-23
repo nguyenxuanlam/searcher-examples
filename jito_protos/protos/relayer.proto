@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "packet.proto";
 import "shared.proto";
-import "auth.proto"
+import "auth.proto";
 package relayer;
 
 message GetTpuConfigsRequest {}
