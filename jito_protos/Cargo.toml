@@ -9,9 +9,12 @@ bincode = "1.3.3"
 bytes = "1.4.0"
 prost = "0.12"
 prost-types = "0.12"
-solana-perf = "=1.17.20"
-solana-sdk = "=1.17.20"
 tonic = "0.10"
+
+solana-sdk = "=1.16.15"
+solana-program-runtime = "=1.16.15"
+solana-vote-program = "=1.16.15"
+solana-perf = "=1.16.15"
 
 [build-dependencies]
 tonic-build = "0.10"
