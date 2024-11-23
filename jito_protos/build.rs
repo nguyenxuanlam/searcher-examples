@@ -7,11 +7,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let proto_dir = manifest_dir.join("protos");
 
     let proto_files = [
+        "packet.proto",
         "auth.proto",
         "block.proto",
         "block_engine.proto",
         "bundle.proto",
-        "packet.proto",
         "relayer.proto",
         "searcher.proto",
         "shared.proto",

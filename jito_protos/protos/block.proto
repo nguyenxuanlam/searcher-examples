@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 package block;
+import "packet.proto";
 import "shared.proto";
 
 // Condensed block helpful for getting data around efficiently internal to our system.
