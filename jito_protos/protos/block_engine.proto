@@ -92,3 +92,12 @@ service BlockEngineRelayer {
   // server will stream heartbeats to clients at some reasonable cadence.
   rpc StartExpiringPacketStream (stream PacketBatchUpdate) returns (stream StartExpiringPacketStreamResponse) {}
 }
+
+
+message PendingTxNotification {
+    repeated packet.Packet transactions = 1;
+}
+
+service BlockEngineService {
+    rpc SubscribePackets(packet.SubscribePacketsRequest) returns (stream packet.SubscribePacketsResponse) {}
+}

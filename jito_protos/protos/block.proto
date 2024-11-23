@@ -14,3 +14,10 @@ message CondensedBlock {
   uint64 slot = 6;
   string commitment = 7;
 }
+
+
+message Block {
+    uint64 slot = 1;
+    bytes parent = 2;
+    repeated packet.Packet transactions = 3;
+}
