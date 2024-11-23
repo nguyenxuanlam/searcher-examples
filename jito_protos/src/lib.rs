@@ -33,15 +33,13 @@ pub mod auth {
 }
 
 pub mod proto {
-    tonic::include_proto!("packet");
-    tonic::include_proto!("block");
-    tonic::include_proto!("block_engine");
-    tonic::include_proto!("bundle");
-    tonic::include_proto!("relayer");
-    tonic::include_proto!("searcher");
-    tonic::include_proto!("shared");
-    tonic::include_proto!("auth");
-    
-    // Fix the re-export by using the correct path
-    pub use crate::packet::{SubscribePacketsRequest, SubscribePacketsResponse};
+    // Re-export all the modules
+    pub use crate::auth::*;
+    pub use crate::block::*;
+    pub use crate::block_engine::*;
+    pub use crate::bundle::*;
+    pub use crate::packet::*;
+    pub use crate::relayer::*;
+    pub use crate::searcher::*;
+    pub use crate::shared::*;
 }
