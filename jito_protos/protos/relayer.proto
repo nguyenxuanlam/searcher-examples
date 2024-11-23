@@ -3,6 +3,7 @@ syntax = "proto3";
 import "packet.proto";
 import "shared.proto";
 import "auth.proto";
+
 package relayer;
 
 message GetTpuConfigsRequest {}
@@ -11,14 +12,15 @@ message GetTpuConfigsResponse {
   shared.Socket tpu_forward = 2;
 }
 
-message SubscribePacketsRequest {}
-message SubscribePacketsResponse {
-  shared.Header header = 1;
-  oneof msg {
-    shared.Heartbeat heartbeat = 2;
-    packet.PacketBatch batch = 3;
-  }
-}
+// Using shared messages instead of redefining them
+// message SubscribePacketsRequest {}
+// message SubscribePacketsResponse {
+//   shared.Header header = 1;
+//   oneof msg {
+//     shared.Heartbeat heartbeat = 2;
+//     packet.PacketBatch batch = 3;
+//   }
+// }
 
 /// Relayers offer a TPU and TPU forward proxy for Solana validators.
 /// Validators can connect and fetch the TPU configuration for the relayer and start to advertise the
@@ -31,4 +33,5 @@ service Relayer {
 
   // Validators can subscribe to packets from the relayer and receive a multiplexed signal that contains a mixture
   // of packets and heartbeats
+  rpc SubscribePackets (shared.SubscribePacketsRequest) returns (stream shared.SubscribePacketsResponse) {}
 }
