@@ -16,3 +16,11 @@ message Socket {
   string ip = 1;
   int64 port = 2;
 }
+message Empty {}
+
+// Move common messages here
+message SubscribePacketsRequest {}
+
+message SubscribePacketsResponse {
+    repeated packet.Packet packets = 1;
+}

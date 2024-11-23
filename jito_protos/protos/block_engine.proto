@@ -6,11 +6,7 @@ import "bundle.proto";
 
 package block_engine;
 
-message SubscribePacketsRequest {}
-message SubscribePacketsResponse {
-  shared.Header header = 1;
-  packet.PacketBatch batch = 2;
-}
+
 
 message SubscribeBundlesRequest {}
 message SubscribeBundlesResponse {

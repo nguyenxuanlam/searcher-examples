@@ -41,4 +41,7 @@ pub mod proto {
     tonic::include_proto!("searcher");
     tonic::include_proto!("shared");
     tonic::include_proto!("auth");
+    // Re-export shared types to avoid conflicts
+    pub use shared::{SubscribePacketsRequest, SubscribePacketsResponse};
+
 }

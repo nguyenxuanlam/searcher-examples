@@ -2,7 +2,7 @@ syntax = "proto3";
 
 import "packet.proto";
 import "shared.proto";
-
+import "auth.proto"
 package relayer;
 
 message GetTpuConfigsRequest {}
@@ -31,5 +31,4 @@ service Relayer {
 
   // Validators can subscribe to packets from the relayer and receive a multiplexed signal that contains a mixture
   // of packets and heartbeats
-  rpc SubscribePackets (SubscribePacketsRequest) returns (stream SubscribePacketsResponse) {}
 }
